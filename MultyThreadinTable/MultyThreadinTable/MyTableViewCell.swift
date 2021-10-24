@@ -8,14 +8,23 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var photoImageView: UIImageView!
-
+    
+    
     func configure(path: String){
-        if let url = URL(string: path),
-        let data = try? Data(contentsOf: url),
-        let image = UIImage(data: data){
-            photoImageView.image = image
+        
+        //Add Global Queue userInitiated async
+        DispatchQueue.global(qos: .userInitiated).async {
+            [weak self] in
+            if let url = URL(string: path),
+               let data = try? Data(contentsOf: url),
+               let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    //move to main queue
+                    self?.photoImageView.image = image
+                }
+            }
         }
     }
 }
