@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     
-    var images:[String] = ["https://wallpaperaccess.com/full/766763.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6VcHNvZz-xv22BMZ-_k_JGCZvasrfZTxbdFXkgOJhY6EfZtWt1Am5Rm-umNJT5r8jzCQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_IXI4mgLI-JJUtBbwipTuy5BWjhWK3pTli_9UusI8sC00ov4SS_PhO9R_4yJINPrnVLw&usqp=CAU", "https://wallpaperaccess.com/full/733648.jpg"]
+    var images:[String] = ["https://wallpaperaccess.com/full/766763.jpg","https://512pixels.net/downloads/macos-wallpapers/10-8.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_IXI4mgLI-JJUtBbwipTuy5BWjhWK3pTli_9UusI8sC00ov4SS_PhO9R_4yJINPrnVLw&usqp=CAU", "https://wallpapershome.ru/images/wallpapers/osx-5120x2880-5k-4k-wallpaper-8k-volna-more-okean-zakat-180.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Dh7Yt93XMHP_9rsNl13f0X6e9FJEXIuYnA&usqp=CAU"]
     
     
     //    override func viewDidLoad() {
@@ -51,4 +51,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+    //Heigth of Row
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    
 }

@@ -11,9 +11,12 @@ class MyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
     
+    //nil image for use Pereispolsovanie
+    override func prepareForReuse() {
+        photoImageView.image = nil
+    }
     
     func configure(path: String){
-        
         //Add Global Queue userInitiated async
         DispatchQueue.global(qos: .userInitiated).async {
             [weak self] in
