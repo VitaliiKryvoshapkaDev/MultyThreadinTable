@@ -10,8 +10,10 @@ import UIKit
 class MyTableViewCell: UITableViewCell {
     
     @IBOutlet weak var indicatorOutlet: UIActivityIndicatorView!
-    
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    //create path for row
+    private var path: String?
     
     //nil image for use Pereispolsovanie
     override func prepareForReuse() {
@@ -19,6 +21,9 @@ class MyTableViewCell: UITableViewCell {
     }
     
     func configure(path: String){
+        
+        //save path for images in table
+        self.path = path
         
         //Prepare for use indicator
         indicatorOutlet.startAnimating()
@@ -28,7 +33,11 @@ class MyTableViewCell: UITableViewCell {
             [weak self] in
             if let url = URL(string: path),
                let data = try? Data(contentsOf: url),
-               let image = UIImage(data: data){
+               let image = UIImage(data: data),
+                //if path == path now (VERY IMPORTANT)
+               path == self?.path
+            {
+                //the reload
                 DispatchQueue.main.async {
                     //move to main queue
                     self?.photoImageView.image = image
