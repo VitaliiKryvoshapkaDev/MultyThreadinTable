@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,10 +20,16 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxj-76-Hvh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zKk-gc-lmr">
+                        <rect key="frame" x="169" y="56" width="37" height="37"/>
+                        <color key="color" systemColor="systemBrownColor"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="zKk-gc-lmr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="93t-Az-bXP"/>
                     <constraint firstAttribute="trailing" secondItem="bxj-76-Hvh" secondAttribute="trailing" id="Ip7-na-Ksl"/>
                     <constraint firstItem="bxj-76-Hvh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JBU-1z-ByD"/>
+                    <constraint firstItem="zKk-gc-lmr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bCj-10-LD0"/>
                     <constraint firstItem="bxj-76-Hvh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="j3b-r3-b0X"/>
                     <constraint firstItem="bxj-76-Hvh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="leA-0f-8aO"/>
                     <constraint firstItem="bxj-76-Hvh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wbY-Hx-XA3"/>
@@ -31,9 +38,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="indicatorOutlet" destination="zKk-gc-lmr" id="eoe-NR-9Jz"/>
                 <outlet property="photoImageView" destination="bxj-76-Hvh" id="p6h-Hp-dsH"/>
             </connections>
             <point key="canvasLocation" x="155.79710144927537" y="95.424107142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

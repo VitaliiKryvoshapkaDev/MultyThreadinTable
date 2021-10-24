@@ -9,6 +9,8 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var indicatorOutlet: UIActivityIndicatorView!
+    
     @IBOutlet weak var photoImageView: UIImageView!
     
     //nil image for use Pereispolsovanie
@@ -17,6 +19,10 @@ class MyTableViewCell: UITableViewCell {
     }
     
     func configure(path: String){
+        
+        //Prepare for use indicator
+        indicatorOutlet.startAnimating()
+        
         //Add Global Queue userInitiated async
         DispatchQueue.global(qos: .userInitiated).async {
             [weak self] in
@@ -26,6 +32,9 @@ class MyTableViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     //move to main queue
                     self?.photoImageView.image = image
+                    
+                    //Stop Indiacator
+                    self?.indicatorOutlet.stopAnimating()
                 }
             }
         }
