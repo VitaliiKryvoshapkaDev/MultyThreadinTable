@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     }
     
     
-    var images:[String] = ["https://yablyk.com/wp-content/uploads/2021/10/macbook-pro-2021-inches-14-16-review.jpg","https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16-spacegray-select-202110_GEO_RU?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1633657685000", "https://prostomac.com/wp-content/uploads/2021/10/macbook-pro-2021-release-2-.jpg", "https://www.ixbt.com/img/n1/news/2021/9/1/Снимок%20экрана%202021-10-18%20в%2020.48.56%201_large.png"]
+    var images:[String] = ["https://wallpaperaccess.com/full/766763.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6VcHNvZz-xv22BMZ-_k_JGCZvasrfZTxbdFXkgOJhY6EfZtWt1Am5Rm-umNJT5r8jzCQ&usqp=CAU", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_IXI4mgLI-JJUtBbwipTuy5BWjhWK3pTli_9UusI8sC00ov4SS_PhO9R_4yJINPrnVLw&usqp=CAU", "https://wallpaperaccess.com/full/733648.jpg"]
     
     
     //    override func viewDidLoad() {
